@@ -1,0 +1,9 @@
+
+services:
+  fastapi:
+    image: fastapi-app
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - ENV=production

@@ -32,11 +32,11 @@ db.books = {
     ),
 }
 
-@router.post("/", status_code=status.HTTP_200_CREATED)
+@router.post("/", status_code=status.HTTP_201_CREATED)
 async def create_book(book: Book):
     db.add_book(book)
     return JSONResponse(
-        status_code=status.HTTP_200_CREATED, content=book.model_dump()
+        status_code=status.HTTP_201_CREATED, content=book.model_dump()
     )
 
 @router.get(

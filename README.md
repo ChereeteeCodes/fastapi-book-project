@@ -46,7 +46,7 @@ fastapi-book-project/
 
 ## Installation
 
-1. Clone the repository:
+1. Clone the repo:
 
 ```bash
 git clone https://github.com/hng12-devbotops/fastapi-book-project.git

@@ -21,6 +21,13 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+          pip install flake8 pytest  # Install linting and testing tools
+
+      - name: Run linting
+        run: |
+          flake8 .  # Fails the pipeline if there are linting issues
 
       - name: Run tests
-        run: pytest
+        run: |
+          pytest --exitfirst --disable-warnings  # Fails the pipeline on first test failure
+

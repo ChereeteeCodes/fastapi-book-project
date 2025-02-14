@@ -8,8 +8,10 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
       - name: SSH into EC2 and deploy
         uses: appleboy/ssh-action@v0.1.7
         with:
@@ -21,7 +23,7 @@ jobs:
             git stash 
             git pull origin main
             git reset --hard origin/main
-            sudo docker-compose down
+            docker-compose down || true
             sudo docker-compose up --build -d
             sudo docker ps
 

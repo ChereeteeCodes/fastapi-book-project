@@ -26,7 +26,3 @@ async def health_check():
 @app.get("/api/v1/books/{book_id}")
 def get_book(book_id: int):
     return {"book_id": book_id}
-
-@app.get("/stage2")
-async def stage2():
-    return {"message": "welcome to stage 2"}

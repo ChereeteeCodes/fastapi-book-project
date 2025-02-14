@@ -18,6 +18,7 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
             cd /home/ec2-user/fastapi-book-project
-            git pull origin main
+            git fetch origin main
+            git reset --hard origin/main
             sudo docker-compose up --build -d
 
